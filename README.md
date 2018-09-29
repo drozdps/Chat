@@ -1,24 +1,8 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
-
-\title{Chatter by Paul Drozd, BSU}
-\author{drozdps@gmail.com }
-\date{September 2018}
-
-\begin{document}
-
-\maketitle
-
-\section{Technologies used}
-\begin{itemize}
-    \item Java
-    \item Spring MVC
-    \item Spring Boot
-    \item JQuery
-    \item Bootstrap
-    \item Redis (https://dzone.com/articles/intro-to-redis-with-spring-boot)
-    \item Cassandra
-    \item 
-    
-\end{itemize}
-\end{document}
+<img src="https://www.bsu.by/Cache/Page/653933.jpg" align="right"
+     title="Size Limit logo by Anton Lovchikov" width="600" height="250">
+ Chatter web-application developed by Paul Drozd for course project in master's degree education level at Belarussian State Univeristy
+ 
+ ## Technologies used
+ 
+ * **[Java](https://www.oracle.com/technetwork/java/javase/documentation/index.html)**
+* **[Spring MVC](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html)**
