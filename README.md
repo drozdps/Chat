@@ -1,7 +1,7 @@
 <img src="https://www.bsu.by/Cache/Page/653933.jpg" align="right"
-     title="Size Limit logo by Anton Lovchikov" width="600" height="250">
- Chatter web-application developed by Paul Drozd for course project in master's degree education level at Belarussian State Univeristy
- 
+     title="Size Limit logo by Anton Lovchikov">
+ <h2>Chatter web-application developed by Paul Drozd for course project at Belarussian State University</h2>
+
  ## Technologies used
  
  * **[Java](https://www.oracle.com/technetwork/java/javase/documentation/index.html)**
