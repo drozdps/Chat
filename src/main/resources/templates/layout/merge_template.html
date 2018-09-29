@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html	xmlns:th="http://www.thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+		<link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css" media="screen,projection"/>
+		<title>Paul Drozd - Chatter</title>
+	</head>
+
+	<body>
+		<!-- BASIC NAVIGATION BAR THAT MUST BE VISIBLE ON ALL PAGES THAT INHERIT THIS TMEPLATE -->
+		<nav class="navbar navbar-light navbar-fixed-top" style="background-color: #e3f2fd;">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" style="padding: 0px;" href="#">
+						<img th:src="@{/img/bsu.jpg}" style="height: 100%;padding: 5px; width: auto;"/>
+					</a>
+				</div>
+    			<div id="navbar" class="navbar-collapse collapse">
+      				<ul class="nav navbar-nav" sec:authorize="isAuthenticated()">
+        				<li class="active">
+            				<a href="/chat" th:text="#{menu.rooms}">Rooms</a>
+        				</li>
+ 					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown" sec:authorize="isAuthenticated()">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span sec:authentication="name"></span></a>
+							<ul class="dropdown-menu">
+								<li>
+									<a id="newRoom" href="#" data-toggle="modal" data-target="#newRoomModal"  th:text="#{menu.new.rooms}" sec:authorize="hasRole('ROLE_ADMIN')">New Room</a>
+								</li>
+								<li>
+									<a href="/logout" th:text="#{menu.logout}">Logout</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	
+		<!-- MAIN SECTION OF PAGE -->
+		<section layout:fragment="body">
+	    	<p>some stuff</p>
+		</section>
+
+		<!-- LOAD ALL JS BEFORE CLOSING BODY TAG FOR PERFOMANCE REASONS -->
+		<script src="/webjars/jquery/3.3.1/jquery.min.js"></script>
+		<script src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<!-- PAGES THAT WILL INHERIT THIS TEMPLATE CAN CONTAIN CUSTOM JS CODE -->
+		<script type="text/javascript" layout:fragment="script">
+	</script>
+	</body>
+</html>
