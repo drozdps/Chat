@@ -22,8 +22,9 @@ public class Room {
 	@VisibleForTesting
 	public Room(String id, String name, String description) {
 		this.id = id;
-		this.name = name;
 		this.description = description;
+		this.name = name;
+		
 	}
 
 	public String getId() {
