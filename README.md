@@ -7,3 +7,4 @@
  * **[Java](https://www.oracle.com/technetwork/java/javase/documentation/index.html)**
 * **[Spring MVC](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html)**
 * **[Spring Boot](http://spring.io/projects/spring-boot)**
+* **[Sockjs](https://github.com/sockjs/sockjs-client)**
