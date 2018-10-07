@@ -7,9 +7,11 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
 		<link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css" media="screen,projection"/>
 		<title>Paul Drozd - Chatter</title>
+		<link th:href="@{css/loginStyles.css}" rel="stylesheet"/>
 	</head>
 
 	<body>
+	
 		<!-- BASIC NAVIGATION BAR THAT MUST BE VISIBLE ON ALL PAGES THAT INHERIT THIS TMEPLATE -->
 		<nav class="navbar navbar-light navbar-fixed-top" style="background-color: #e3f2fd;">
 			<div class="container">
@@ -47,9 +49,8 @@
 				</div>
 			</div>
 		</nav>
-	
 		<!-- MAIN SECTION OF PAGE -->
-		<section layout:fragment="body">
+		<section layout:fragment="body" class="bg">
 	    	<p>some stuff</p>
 		</section>
 

@@ -11,8 +11,8 @@
 
 ## Screenshots
 
-<h2>Registration page:</h2>
+Registration page:
 
 ![Registration page](https://github.com/drozdps/Chat/blob/master/screens/registration.png)
 
-<h2>Login page:</h2>
+Login page:
