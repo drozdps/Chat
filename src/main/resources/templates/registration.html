@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		xmlns:th="http://www.thymeleaf.org"
+		layout:decorator="layout/merge_template">
+	<head>
+	</head>
+	
+	<body>
+		<div layout:fragment="body" style="padding-left:30%;padding-top:13%;">
+			<div class="container-fluid align-middle">	
+				<form th:action="@{/registration}" th:object="${user}" class="form-horizontal align-middle" method="post">
+					<div class="form-group align-middle">
+					    <label for="nameInput" th:text="#{register.name}" class="col-sm-2 control-label">Name</label>
+					    <div class="col-sm-5">
+					        <input id="nameInput" type="text" class="form-control" th:field="${user.name}" th:placeholder="#{register.your.name}" />
+					        <div th:errors="*{name}" class="alert alert-danger">Error</div>
+					    </div>
+					    <small class="text-muted">
+			      			What is your name?
+			    		</small>
+					</div>
+					<div class="form-group align-middle">
+						<label for="emailInput" class="col-sm-2 control-label" th:text="#{register.email}">Email</label>
+						<div class="col-sm-5">
+							<input th:field="${user.email}" type="text" id="emailInput" name="email" class="form-control" th:placeholder="#{register.your.email}" />
+		        			<div th:errors="*{email}" class="alert alert-danger">Error</div>
+		    			</div>
+			    		<small class="text-muted">
+	      					Please enter a valid email address
+	    				</small>
+					</div>
+					<div class="form-group">
+						<label for="username" class="col-sm-2 control-label" th:text="#{register.username}">Username</label>
+	    				<div class="col-sm-5">
+	        				<input th:field="${user.username}" type="text" id="username" name="username" class="form-control" th:placeholder="#{register.your.username}" />
+	        				<div th:errors="*{username}" class="alert alert-danger">Error</div>
+	    				</div>
+					    <small class="text-muted">
+			      			Must be 5-15 characters long
+			    		</small>
+					</div>
+					<div class="form-group">
+		    			<label for="passwordInput" class="col-sm-2 control-label" th:text="#{register.password}">Password</label>
+					    <div class="col-sm-5">
+					        <input th:field="${user.password}" type="password" class="form-control" id="passwordInput" name="password" th:placeholder="#{register.your.password}"/>
+					        <div th:errors="*{password}" class="alert alert-danger">Error</div>
+					    </div>
+					    <small class="text-muted">
+			      			At least 5 symbols required
+			    		</small>
+					</div>
+					<div class="form-group">
+		    			<div class="col-sm-offset-2 col-sm-4">
+		      				<button type="submit" class="btn bg-success" th:text="#{register.create}">Create</button>
+		      				<a href="/" th:text="#{register.back}">Back to login page</a>
+		  				</div>
+		  				
+		 			</div>
+				</form>
+    		</div>
+	</div>
+</body>
+</html>
