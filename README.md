@@ -16,3 +16,5 @@ Registration page:
 ![Registration page](https://github.com/drozdps/Chat/blob/master/screens/registration.png)
 
 Login page:
+
+![Login page](https://github.com/drozdps/Chat/blob/master/screens/login.png)
