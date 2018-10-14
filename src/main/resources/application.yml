@@ -1,0 +1,41 @@
+spring.profiles.active: dev
+---
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/chat
+    username: root
+    password: password
+    testWhileIdle: true
+    validationQuery: SELECT 1
+  jpa:
+    show-sql: true
+    
+    hibernate:
+      ddl-auto: validate
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  redis:
+    host: localhost
+    port: 6379
+  session:
+    store-type: redis  
+  thymeleaf:
+    cache: false
+  messages:
+    cache-seconds: 0
+  data:
+    redis:
+      repositories:
+        enabled: true
+
+security.headers.cache: false
+flyway.enabled: true      
+server.session.timeout: 600
+chat:
+  chat:
+    relay:
+      host: localhost
+      port: 61613
