@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorator="layout/merge_template"> <!-- INHERIT PARENT HTML5 MERGE TamplE -->
+	  
+<head>
+</head>
+
+
+<body>
+	<div class="container" layout:fragment="body">
+	 
+		<h3 class="text-center" th:text="#{chat.available.rooms}">Available Chat Rooms</h3>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th th:text="#{chat.rooms.name}">Name</th>
+					<th th:text="#{chat.rooms.connectedUsers}">Connected Users</th>
+					<th th:text="#{chat.rooms.description}">Description</th>
+					<th></th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr th:each="room : ${rooms}">
+					<td th:text="${room.name}">mock name to be replaced by JS</td>
+					<td th:text="${#lists.size(room.connectedUsers)}">0</td>
+					<td th:text="${room.description}">mock description to be replaced by JS</td>
+					<td><a th:href="|/room/${room.id}|" th:text="#{chat.rooms.join}">Join</a></td>
+				</tr>
+			</tbody>
+		</table>
+
+
+		<div class="modal fade" id="modal" tabindex="-1"
+			role="dialog" aria-labelledby="newRoomLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title" id="newRoomLabel" th:text="#{chat.new.room.title}">New Room</h4>
+					</div>
+					
+					
+					<div class="modal-body">
+						<form>
+							<div class="form-group">
+								<label for="newRoomTitle" class="control-label" th:text="#{chat.new.room.name}">Name</label>
+								<input type="text" class="form-control" id="newRoomTitle" />
+							</div>
+							<div class="form-group">
+								<label for="newRoomDescription" class="control-label" th:text="#{chat.new.room.description}">Description</label>
+								<textarea class="form-control" id="newRoomDescription"></textarea>
+							</div>
+						</form>
+					</div>
+					
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal" th:text="#{chat.new.room.close}">Close</button>
+						<button id="newRoomButton" type="button"	class="btn btn-primary" th:text="#{chat.new.room.create}">Create</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+</body>
+</html>
