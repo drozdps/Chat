@@ -19,16 +19,12 @@ Project designed and implemented for master's degree course "Enterprise Software
 * Long-term message history
 * Distributed database Cassandra. I used Apache Cassandra database as a long-term vault for user messages. It supports Big Data technologies and works extremely effectively in this project. The database restores previous messages when a user logs into the system:
 ```
-CREATE TABLE IF NOT EXISTS message (username text,
-								   date timestamp,
-								   fromUser text,
-								   roomId text,
-								   toUser text,
-								   text text,
-								   PRIMARY KEY ((username, roomId), date))
-WITH CLUSTERING ORDER BY (date ASC)
+CREATE TABLE IF NOT EXISTS message (username text, date timestamp, fromUser text,  roomId text, toUser text, text text, PRIMARY KEY ((username, roomId), date)) WITH CLUSTERING ORDER BY (date ASC)
 ```
-
+* In-memory key-value database Redis, which I used to store rooms with users so a User can quickly join or leave any group.
+* Sophisticated security with Spring Security Framework. All passwords are encrypted
+* MySQL was used as the main database storing following tables:
+![MySQL scheme](https://github.com/drozdps/Chat/blob/master/screens/schema.png)
 
  ## Technologies used
  
