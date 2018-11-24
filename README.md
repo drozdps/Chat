@@ -25,6 +25,22 @@ CREATE TABLE IF NOT EXISTS message (username text, date timestamp, fromUser text
 * Sophisticated security with Spring Security Framework. All passwords are encrypted
 * MySQL was used as the main database storing following tables:
 ![MySQL scheme](https://github.com/drozdps/Chat/blob/master/screens/schema.png)
+* Beautiful and user-friendly UI. I used JSP+Thymeleaf to build all pages
+* Fast external message broker
+
+## Patterns and architecture
+
+* Complex Big Data technologies with Cassandra+Redis+external message broker
+* Full support of all SOLID principles (https://www.wikiwand.com/en/SOLID)
+* MVC pattern: separation of concerns using Spring Framework (each page has JSP file for UI, wired Spring controller and corresponding model and DAO classes).  A controller returns a logical view name and the view selection with the help of a separate ViewResolver.
+* Dependency injection and inversion of control. I inject Spring Beans in the Spring IOC container which is responsible for the objects creation, wiring the objects together, configuring these objects and handling their entire lifecycle.
+* Proxy pattern. This is a structural pattern that is used by Spring framework to generate special objects to interface the functionality of inner objects to the outer world.
+* Front Controller Design pattern. The front controller design pattern is a technique in software engineering to implement centralized request handling mechanism which is capable of handling all the requests through a single handler. Spring framework provides support for the DispatcherServlet that ensure to dispatch an incoming request to your controllers.
+* Singleton. All Spring Bean defined in spring config files are singletons by default.
+* Factory. Used for loading beans through BeanFactory and Application context.
+
+
+
 
  ## Technologies used
  
@@ -34,9 +50,9 @@ CREATE TABLE IF NOT EXISTS message (username text, date timestamp, fromUser text
 * **[Sockjs](https://github.com/sockjs/sockjs-client)**
 * **[Redis](https://redis.io/)**
 * **[Cassandra](http://cassandra.apache.org/)**
+* **[JUnit](https://junit.org/junit5/)**
+* **[Thymeleaf](https://www.thymeleaf.org/)**
 
-
- 
 
 ## Screenshots
 
