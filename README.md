@@ -63,3 +63,15 @@ Registration page:
 Login page:
 
 ![Login page](https://github.com/drozdps/Chat/blob/master/screens/login.png)
+
+Room list page:
+
+![Room list page](https://github.com/drozdps/Chat/blob/master/screens/rooms.png)
+
+Add room dialog:
+
+![Add room dialog](https://github.com/drozdps/Chat/blob/master/screens/add_room.png)
+
+Sample room page:
+
+![Sample room page](https://github.com/drozdps/Chat/blob/master/screens/room.png)

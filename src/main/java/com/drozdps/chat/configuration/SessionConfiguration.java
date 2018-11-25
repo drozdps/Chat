@@ -26,7 +26,6 @@ public class SessionConfiguration extends AbstractSessionWebSocketMessageBrokerC
 	}
 
 	// Don't use standard Spring Broker
-	// use Redis key-value store instead
 	public void configureMessageBroker(MessageBrokerRegistry registry) {
 		registry.enableStompBrokerRelay("/queue/", "/topic/")
 			.setUserDestinationBroadcast("/topic/unresolved.user.dest")
