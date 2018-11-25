@@ -125,7 +125,7 @@ export PATH=$PATH:/usr/local/sbin
 maven clean install
 ```
 11. Run project as Spring Boot project:
-![Run project](https://github.com/drozdps/Chat/blob/master/screens/sts.png)
+![Run project](https://github.com/drozdps/Chat/blob/master/screens/sts_1.png)
 12. Voilà!
  
 
