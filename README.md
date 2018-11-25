@@ -30,10 +30,21 @@ CREATE TABLE IF NOT EXISTS message (username text, date timestamp, fromUser text
 
 ## Patterns and architecture
 
-* Complex Big Data technologies with Cassandra+Redis+external message broker
+* Complex Big Data technologies with Cassandra+Redis+external message broker. Package com.drozdps.chat.configuration contains all configuration classes for listed databases and for application security:
+	1. CassandraConfiguration
+	2. ResourceConfiguration 
+	3. SessionConfiguration
+	4. WebConfig
+	5. WebSecurityConfig
+	6. WebSocketEvents
 * Full support of all SOLID principles (https://www.wikiwand.com/en/SOLID)
-* MVC pattern: separation of concerns using Spring Framework (each page has JSP file for UI, wired Spring controller and corresponding model and DAO classes).  A controller returns a logical view name and the view selection with the help of a separate ViewResolver.
+* MVC pattern: separation of concerns using Spring Framework (each page has JSP file for UI, wired Spring controller and corresponding model and DAO classes).  A controller returns a logical view name and the view selection with the help of a separate ViewResolver:
+	1. com.drozdps.chat.controller contains all Controller layer classes
+	2. com.drozdps.chat.model contains all Model classes representing entities in databases
+	3. com.drozdps.chat.dao contains Data Access Objects for entity objects
+	4. com.drozdps.chat.service contains Service layer classes which are used by controllers' methods
 * Dependency injection and inversion of control. I inject Spring Beans in the Spring IOC container which is responsible for the objects creation, wiring the objects together, configuring these objects and handling their entire lifecycle.
+	* You can observe Spring Beans examples in class CassandraConfiguration (see @Bean annotation)
 * Proxy pattern. This is a structural pattern that is used by Spring framework to generate special objects to interface the functionality of inner objects to the outer world.
 * Front Controller Design pattern. The front controller design pattern is a technique in software engineering to implement centralized request handling mechanism which is capable of handling all the requests through a single handler. Spring framework provides support for the DispatcherServlet that ensure to dispatch an incoming request to your controllers.
 * Singleton. All Spring Bean defined in spring config files are singletons by default.
