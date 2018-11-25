@@ -128,6 +128,16 @@ maven clean install
 ![Run project](https://github.com/drozdps/Chat/blob/master/screens/sts_1.png)
 12. Voilà!
  
+ ## Units tests
+ 
+I've implemented a set of unit tests which a located in src/test directory. You can run tests directly from any Eclipse-based IDE, i.e. Spring Tool Suite that supports JUnit plugin. Tests cover following logic (classes ChatApplicationTest.java, KeyValueVaultTest.java, MessageConstructorTest.java):
+* Page loading using org.springframework.test.web.servlet.MockMvc mock
+* Message broker
+* User persist
+* Room persist
+* Authorities segregation 
+
+
 
 ## Screenshots
 
