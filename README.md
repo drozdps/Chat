@@ -58,11 +58,11 @@ CREATE TABLE IF NOT EXISTS message (username text, date timestamp, fromUser text
 
 Registration page:
 
-![Registration page](https://github.com/drozdps/Chat/blob/master/screens/registration.png)
+![Registration page](https://github.com/drozdps/Chat/blob/master/screens/registration_new.png)
 
 Login page:
 
-![Login page](https://github.com/drozdps/Chat/blob/master/screens/login.png)
+![Login page](https://github.com/drozdps/Chat/blob/master/screens/login_new.png)
 
 Room list page:
 
