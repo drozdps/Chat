@@ -68,6 +68,47 @@
 	</div>
 
 
+	<script layout:fragment="script">
+		$(document).ready(function() {
+
+			var newRoom = $("#newRoom");
+			var newRoomButton = $("#newRoomButton");
+			var newRoomTitle = $("#newRoomTitle");
+			var txtNewRoomDescription = $("#newRoomDescription");
+
+			function createNewRoom() {
+
+				$.ajax({
+					url : "/room",
+					type : "POST",
+					data : JSON.stringify({
+						'name' : newRoomTitle.val(),
+						'description' : txtNewRoomDescription.val()
+					}),
+					contentType : "application/json",
+					success : function(room) {
+						var $trTag = $("<tr/>");
+						var $tbody = $("tbody");
+						
+
+						$("<td/>").text(room.name).appendTo($trTag);
+						$("<td/>").text("0").appendTo($trTag);
+						$("<td/>").text(room.description).appendTo($trTag);
+
+						var join = $('<a/>', {
+							"href" : "/room/" + room.id,
+							"text" : "Join"
+						});
+
+						$("<td/>").append(join).appendTo($trTag);
+						$trTag.appendTo($tbody);
+						newRoom.modal('hide');
+					},
+				});
+			}
+			newRoomButton.on("click", createNewRoom);
+		})
+	</script>
 
 </body>
 </html>
