@@ -138,7 +138,15 @@ maven clean install
 11. Run project as Spring Boot project:
 ![Run project](https://github.com/drozdps/Chat/blob/master/screens/sts_1.png)
 12. Voilà!
+
+ ## Maven commands 
+ ```
+ mvn clean install
+ mvn test
  
+ ```
+  ![Maven ](https://github.com/drozdps/Chat/blob/master/screens/mvn.png)
+  
  ## Units tests
  
 I've implemented a set of unit tests which a located in src/test directory. You can run tests directly from any Eclipse-based IDE, i.e. Spring Tool Suite that supports JUnit plugin. Tests cover following logic (classes ChatApplicationTest.java, KeyValueVaultTest.java, MessageConstructorTest.java):
